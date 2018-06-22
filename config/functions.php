@@ -13,6 +13,17 @@ function checkInput($data)
 
 
 // -----------------------------------------------------------------------
+// Fonction qui échappe caractères pour encodage dans l'url
+// -----------------------------------------------------------------------
+function json_string_encode($str)
+{
+    $from = array('"');
+    $to = array('\\"');
+
+    return str_replace($from, $to, $str);
+}
+
+// -----------------------------------------------------------------------
 // Convertit date FR en date US
 // -----------------------------------------------------------------------
 function dateFrtoUS($date)

@@ -63,3 +63,5 @@ if ( isset($_POST['loc-by']) && $_POST['loc-by'] != NULL )
 	}
 	// echo '<pre>', print_r($list_location), '</pre>';
 }
+
+updateLastActivity($_SESSION['user-alias']);

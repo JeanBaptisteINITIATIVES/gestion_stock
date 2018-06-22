@@ -2,10 +2,10 @@
 session_start();
 
 require('config/load.php');
-require('config/session.php');
 require('includes/header.php');
 
 $list_products = getStorageProducts();
+updateLastActivity($_SESSION['user-alias']);
 
 ?>
 		
@@ -157,11 +157,13 @@ $list_products = getStorageProducts();
 						<?php 
 							foreach ( $list_products as $list )
 							{
+								$index = empty($list['comment']) ? "" : '<span class="isComment">* </span>';
+								
 								echo '<tr>';
 								echo	'<td>' . $list['date_update'] . '</td>';
 								echo	'<td>' . $list['num_location'] . '</td>';
 								echo	'<td>' . $list['reference'] . '</td>';
-								echo	'<td>' . $list['designation'] . '</td>';
+								echo	'<td>' . $index . $list['designation'] . '</td>';
 								echo	'<td>' . $list['quantity'] . '</td>';
 								echo	'<td>' . $list['date_entry'] . '</td>';
 								echo	'<td>' . isProductTracked($list['stock']) . '</td>';

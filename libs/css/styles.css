@@ -548,6 +548,11 @@ tbody tr.odd:hover, tbody tr.even:hover
     z-index: 99999;
 }
 
+.isComment
+{
+	color: #c30008;
+}
+
 
 
 

@@ -44,8 +44,8 @@ if( $_SERVER["REQUEST_METHOD"] == "POST" )
 		if ( !checkIfUserExist($user_alias) ) // L'utilisateur n'existe pas
 		{
 			// Ecriture infos connexion en bdd
-		    insertNewUser($user_alias);
-		    
+			insertNewUser($user_alias);
+			
 		    // Redirection
 		    header('Location: productEntry.php');
 		    exit();

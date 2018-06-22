@@ -2,7 +2,6 @@
 session_start();
 
 require('config/load.php');
-require('config/session.php');
 require('includes/history.inc.php');
 require('includes/header.php');
 

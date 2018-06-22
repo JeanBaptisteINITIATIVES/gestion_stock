@@ -2,6 +2,7 @@
 session_start();
 require('load.php');
 
+updateLastActivity($_SESSION['user-alias']);
 disconnectUser($_SESSION['user-alias']);
 
 unset($_SESSION);

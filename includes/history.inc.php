@@ -1,6 +1,6 @@
 <?php
 
-$array 		 = array();
+$array = array();
 
 if ( $_SERVER["REQUEST_METHOD"] == "POST" )
 {
@@ -89,5 +89,7 @@ if ( $_SERVER["REQUEST_METHOD"] == "POST" )
 		$result_date = "Entre le <span class='date-history'>" . $_POST['date-first'] . "</span> et le <span class='date-history'>" . $_POST['date-last'] . "</span>";
 	}
 }
+
+updateLastActivity($_SESSION['user-alias']);
 
 

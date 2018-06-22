@@ -31,8 +31,8 @@ if ( $_SERVER["REQUEST_METHOD"] == "POST" )
 	
 	if ( $typeOfEntry == "tracked" ) // Si suivi en stock
 	{
-		$req_url_ref = json_decode(file_get_contents('http://sccoreapi/v1/product/?filter={"is_stock_managed":-1,"id__exact":"' . urlencode($reference) . '"}&rows=99999'));
-		$req_url_des = json_decode(file_get_contents('http://sccoreapi/v1/product/?filter={"is_stock_managed":-1,"name__exact":"' . urlencode(addslashes($designation)) . '"}&rows=99999'));
+		$req_url_ref = json_decode(file_get_contents('http://sccoreapi/v1/product/?filter={"is_stock_managed":-1,"id__exact":"' . rawurlencode(json_string_encode($reference)) . '"}&rows=99999'));
+		$req_url_des = json_decode(file_get_contents('http://sccoreapi/v1/product/?filter={"is_stock_managed":-1,"name__exact":"' . rawurlencode(json_string_encode($designation)) . '"}&rows=99999'));
 
 		// Contrôle de l'existence de l'emplacement
 		if ( !checkIfLocationExist($location) || empty($location) )
